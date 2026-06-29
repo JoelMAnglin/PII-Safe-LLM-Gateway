@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PII Safe LLM Gateway</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23172026'/%3E%3Cpath d='M32 8 52 17v13c0 13-8 22-20 26-12-4-20-13-20-26V17z' fill='%231769aa'/%3E%3Cpath d='M23 32h18M27 25h10M27 39h10' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Privacy engineering portfolio project</p>
+        <h1>PII Safe LLM Gateway</h1>
+        <p class="subhead">Ingest data, detect possible identifying attributes, de-identify the content, and preview a safer prompt before sending anything to an LLM.</p>
+      </div>
+      <div class="hero-score">
+        <span>Risk</span>
+        <strong id="riskLevel">none</strong>
+      </div>
+    </header>
+
+    <main>
+      <aside class="panel sidebar">
+        <h2>Guided Walkthrough</h2>
+        <ol class="steps">
+          <li><strong>Load raw data.</strong><span>Use a sample or paste your own support ticket, HR row, or incident note.</span></li>
+          <li><strong>Choose a mode.</strong><span>Replace is best for LLM safety. Mask and hash are useful for audits.</span></li>
+          <li><strong>Sanitize.</strong><span>The app detects likely PII and secrets, then removes or tokenizes them.</span></li>
+          <li><strong>Review the report.</strong><span>Confirm which attributes were found before sending the prompt onward.</span></li>
+          <li><strong>Copy safe prompt.</strong><span>Only the sanitized prompt should go to an LLM.</span></li>
+        </ol>
+
+        <label>
+          Sample data
+          <select id="sampleSelect">
+            <option value="support">Customer support ticket</option>
+            <option value="hr">HR onboarding CSV</option>
+            <option value="incident">Incident response notes</option>
+          </select>
+        </label>
+        <button id="loadSample">Load sample</button>
+
+        <label>
+          De-identification mode
+          <select id="modeSelect">
+            <option value="replace">Replace with consistent tokens</option>
+            <option value="mask">Mask values</option>
+            <option value="hash">Hash-like labels</option>
+            <option value="remove">Remove values</option>
+          </select>
+        </label>
+
+        <div class="button-grid">
+          <button id="sanitizeButton" class="primary">Sanitize data</button>
+          <button id="downloadButton">Download sanitized</button>
+          <button id="copyPromptButton">Copy safe prompt</button>
+        </div>
+      </aside>
+
+      <section class="workspace">
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>1. Raw Data Ingestion</h2>
+            <span id="formatLabel">auto detect</span>
+          </div>
+          <textarea id="rawInput" spellcheck="false"></textarea>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>2. Sanitized LLM-Safe Output</h2>
+            <span id="findingCount">0 findings</span>
+          </div>
+          <textarea id="sanitizedOutput" spellcheck="false" readonly></textarea>
+        </section>
+
+        <section class="panel report-panel">
+          <div class="panel-heading">
+            <h2>3. Privacy Report</h2>
+            <span>for audit evidence</span>
+          </div>
+          <div class="report-grid">
+            <div>
+              <h3>Detected Attribute Types</h3>
+              <div id="attributeList" class="attribute-list"></div>
+            </div>
+            <div>
+              <h3>Safe Prompt Preview</h3>
+              <pre id="promptPreview"></pre>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+employee_id,full_name,email,phone,street_address,manager,notes
+E-1001,Jordan Lee,jordan.lee@example.com,555-214-8890,455 Pine Road,Avery Smith,Needs laptop shipped to home address.
+E-1002,Nina Patel,nina.patel@example.com,555-210-4421,19 West Lake Avenue,Sam Rivera,Asked whether SSN 123-45-6789 is already on file.
+E-1003,Chris Walker,chris.walker@example.com,555-333-1029,782 Cedar Lane,Avery Smith,Remote worker using IP 10.20.30.40 during onboarding.

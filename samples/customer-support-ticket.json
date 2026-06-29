@@ -1,0 +1,11 @@
+{
+  "ticket_id": "TCK-1042",
+  "customer_name": "Maria Johnson",
+  "email": "maria.johnson@example.com",
+  "phone": "(312) 555-0198",
+  "address": "123 North Maple Street",
+  "dob": "DOB: 04/16/1988",
+  "ip_address": "192.168.1.44",
+  "issue": "Customer says her card 4111 1111 1111 1111 was charged twice after resetting her password. She asked for a callback and included token=sk_live_1234567890abcdef.",
+  "agent_notes": "Escalate if duplicate charge appears again. Customer prefers email."
+}

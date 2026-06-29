@@ -1,0 +1,282 @@
+:root {
+  --bg: #f4f7f8;
+  --panel: #ffffff;
+  --ink: #172026;
+  --muted: #5d6b73;
+  --line: #d8e2e7;
+  --blue: #1769aa;
+  --green: #237a57;
+  --amber: #b7791f;
+  --red: #bd3b3f;
+  --shadow: 0 18px 42px rgba(23, 32, 38, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 7px;
+  background: #e8eef2;
+  color: var(--ink);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button.primary {
+  color: #fff;
+  background: var(--blue);
+}
+
+.shell {
+  width: min(1500px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 24px 0 36px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 24px;
+  margin-bottom: 18px;
+  color: #fff;
+  background: #172026;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: #9ed7ff;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 1.05rem;
+}
+
+h3 {
+  font-size: 0.95rem;
+}
+
+.subhead {
+  max-width: 800px;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.55;
+}
+
+.hero-score {
+  display: grid;
+  place-items: center;
+  min-width: 124px;
+  min-height: 104px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-score span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero-score strong {
+  font-size: 1.55rem;
+  text-transform: uppercase;
+}
+
+.hero-score .high {
+  color: #ffaaa9;
+}
+
+.hero-score .medium {
+  color: #ffcf7d;
+}
+
+.hero-score .low {
+  color: #88e1b1;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.panel {
+  padding: 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.sidebar {
+  align-self: start;
+}
+
+.steps {
+  padding-left: 22px;
+  line-height: 1.4;
+}
+
+.steps li {
+  margin-bottom: 13px;
+}
+
+.steps span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  margin: 14px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 10px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.button-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.workspace {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.panel-heading span {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+textarea {
+  min-height: 265px;
+  resize: vertical;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  line-height: 1.45;
+}
+
+#sanitizedOutput {
+  background: #f8fbfa;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  gap: 16px;
+}
+
+.attribute-list {
+  display: grid;
+  gap: 8px;
+}
+
+.attribute {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background: #fbfcfd;
+  border-radius: 7px;
+}
+
+.attribute span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  background: var(--blue);
+  border-radius: 7px;
+  font-weight: 900;
+}
+
+pre {
+  min-height: 220px;
+  max-height: 420px;
+  margin: 0;
+  padding: 14px;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: #eaf2f5;
+  background: #101a1f;
+  border-radius: 8px;
+  line-height: 1.5;
+  font-family: Consolas, "Cascadia Mono", monospace;
+}
+
+@media (max-width: 980px) {
+  main,
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

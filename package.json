@@ -1,0 +1,26 @@
+{
+  "name": "pii-safe-llm-gateway",
+  "version": "1.0.0",
+  "description": "A beginner-friendly data de-identification project that strips possible identifying attributes before data is sent to an LLM.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "demo": "node server.js",
+    "sanitize": "node src/cli.js",
+    "test": "node tests/run-tests.js",
+    "check": "node --check src/deidentifier.js && node --check src/cli.js && node --check server.js && node --check public/app.js"
+  },
+  "keywords": [
+    "pii",
+    "privacy",
+    "llm",
+    "data-loss-prevention",
+    "de-identification",
+    "cybersecurity",
+    "portfolio"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
